@@ -47,6 +47,9 @@ Dentro do Tinker, execute o comando de criação:<br>
 use Illuminate\Support\Facades\Hash;<br>
 App\Models\Administrador::create(['nome' => 'Admin Teste', 'login' => 'admin', 'senha' => Hash::make('123456')]);<br>
 
+### 7. Front-end básico pra exibição dos funcionários
+
+localhost:8000
 
 
 # Code Review
