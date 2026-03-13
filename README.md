@@ -99,7 +99,12 @@ Este módulo controla o saldo dos funcionários. Possui travas de segurança par
   "valor": 100.50,
   "descricao": "Bônus mensal"
 }
+| Endpoint | Método | Descrição | Payload (JSON) |
+| :--- | :--- | :--- | :--- |
+| `/api/funcionarios/{id}/movimentacoes` | `GET` |  Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
+| `POST /api/funcionarios/{id}/movimentacoes` | `POST` | Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
 
+> **Header:** `Authorization: Bearer {token}`
 
 # Code Review
 
