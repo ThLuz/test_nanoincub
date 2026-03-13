@@ -9,43 +9,43 @@ Este projeto é uma API legada desenvolvida em Laravel. Siga os passos abaixo pa
 
 ### 1. Pré-requisitos
 
-* Docker e Docker Compose instalados.
-* Terminal (PowerShell, Git Bash ou CMD).
+* Docker e Docker Compose instalados.<br>
+* Terminal (PowerShell, Git Bash ou CMD).<br>
 
 ### 2. Configurando o Ambiente Laravel
 
-1. Copie o arquivo de exemplo para as configurações locais:
-   cp .env.example .env
-2. Ajuste as variáveis de banco de dados no .env para comunicar com os containers.
+1. Copie o arquivo de exemplo para as configurações locais:<br>
+   cp .env.example .env<br>
+2. Ajuste as variáveis de banco de dados no .env para comunicar com os containers.<br>
 
 ### 3. Subindo o Ambiente via Docker
 
-Navegue até a pasta do projeto e suba os containers em modo segundo plano:
-cd teste-recrutamento-laravel-pl-main/projeto
-docker compose up -d
+Navegue até a pasta do projeto e suba os containers em modo segundo plano:<br>
+cd teste-recrutamento-laravel-pl-main/projeto<br>
+docker compose up -d<br>
 
-Certifique-se de que os containers estão rodando:
-docker ps
+Certifique-se de que os containers estão rodando:<br>
+docker ps<br>
 
 ### 4. Instalação e Chaves
 
-Execute a instalação das dependências e gere a chave da aplicação:
-docker exec -it painel_app composer install
-docker exec -it painel_app php artisan key:generate
+Execute a instalação das dependências e gere a chave da aplicação:<br>
+docker exec -it painel_app composer install<br>
+docker exec -it painel_app php artisan key:generate<br>
 
 ### 5. Banco de Dados e Migrations
 
-Para criar a estrutura das tabelas no banco de dados:
-docker exec -it painel_app php artisan migrate
+Para criar a estrutura das tabelas no banco de dados:<br>
+docker exec -it painel_app php artisan migrate<br>
 
 ### 6. Criando um Administrador Inicial
 
-Para testar os endpoints protegidos, acesse o console interativo:
-docker exec -it painel_app php artisan tinker
+Para testar os endpoints protegidos, acesse o console interativo:<br>
+docker exec -it painel_app php artisan tinker<br>
 
-Dentro do Tinker, execute o comando de criação:
-use Illuminate\Support\Facades\Hash;
-App\Models\Administrador::create(['nome' => 'Admin Teste', 'login' => 'admin', 'senha' => Hash::make('123456')]);
+Dentro do Tinker, execute o comando de criação:<br>
+use Illuminate\Support\Facades\Hash;<br>
+App\Models\Administrador::create(['nome' => 'Admin Teste', 'login' => 'admin', 'senha' => Hash::make('123456')]);<br>
 
 
 
