@@ -134,7 +134,7 @@ Este projeto utiliza o framework de testes do Laravel para validar as correçõe
 
 ---
 
-## 1. Funcionamento do Banco de Dados de Testes
+## Funcionamento do Banco de Dados de Testes
 
 Para garantir a velocidade e o isolamento total dos dados, os testes utilizam um banco de dados **SQLite em memória (`:memory:`)**. 
 
@@ -144,7 +144,14 @@ Para garantir a velocidade e o isolamento total dos dados, os testes utilizam um
 
 ---
 
-## 2. Como executar os testes via Docker
+# Uso de Inteligência Artificial
+Para este teste, utilizei IA de forma estratégica para acelerar o desenvolvimento e garantir a qualidade técnica.
+
+Esqueleto da documentação técnica (README).
+
+O que foi revisado: Grande parte da lógica de segurança (Sanctum).
+
+## Como executar os testes via Docker
 
 Como a aplicação está containerizada, utilize os comandos abaixo no seu terminal para disparar as suítes de teste:
 
@@ -153,11 +160,5 @@ Como a aplicação está containerizada, utilize os comandos abaixo no seu termi
 docker exec -it painel_app php artisan test
 ```
 
-# Uso de Inteligência Artificial
-Para este teste, utilizei IA de forma estratégica para acelerar o desenvolvimento e garantir a qualidade técnica.
-
-Esqueleto da documentação técnica (README).
-
-O que foi revisado: Grande parte da lógica de segurança (Sanctum).
 
 O que mudou: Ajustei manualmente a lógica de lockForUpdate() para garantir a prevenção de condições de corrida, refinei as mensagens de erro para o padrão da API e corrigi as queries de relatório para assegurar a precisão dos cálculos de saldo.
