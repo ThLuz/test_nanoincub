@@ -68,7 +68,7 @@ Com exceção do `/login`, todos os endpoints exigem um token Bearer válido.
 
 ---
 
-## 👥 Funcionários
+## Funcionários
 
 Gerenciamento de registros de funcionários ativos no sistema.
 
@@ -82,7 +82,7 @@ Gerenciamento de registros de funcionários ativos no sistema.
 
 ---
 
-## 💸 Movimentações Financeiras
+## Movimentações Financeiras
 
 Este módulo controla o saldo dos funcionários. Possui travas de segurança para evitar saldo negativo e concorrência de dados.
 
