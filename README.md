@@ -151,7 +151,7 @@ Como a aplicação está containerizada, utilize os comandos abaixo no seu termi
 **Executar todos os testes:**
 ```bash
 docker exec -it painel_app php artisan test
-
+```
 
 # Uso de Inteligência Artificial
 Para este teste, utilizei IA de forma estratégica para acelerar o desenvolvimento e garantir a qualidade técnica.
