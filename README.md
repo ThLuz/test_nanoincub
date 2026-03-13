@@ -59,7 +59,7 @@ Esta API fornece um sistema completo para gerenciamento de colaboradores e contr
 
 Com exceção do `/login`, todos os endpoints exigem um token Bearer válido.
 
-| Endpoint | Método | Descrição |
+| Endpoint | Método | Descrição | Payload (JSON) |
 | :--- | :--- | :--- | :--- |
 | `/api/login` | `POST` | Autentica e retorna o token de acesso. | `{"login": "admin", "senha": "..."}` |
 | `/api/logout` | `POST` | Invalida o token atual. | N/A |
@@ -86,7 +86,7 @@ Gerenciamento de registros de funcionários ativos no sistema.
 
 Este módulo controla o saldo dos funcionários. Possui travas de segurança para evitar saldo negativo e concorrência de dados.
 
-| Endpoint | Método | Descrição | Payload (JSON) |
+| Endpoint | Método | Descrição | 
 | :--- | :--- | :--- | :--- |
 | `/api/funcionarios/{id}/movimentacoes` | `GET` |  Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
 | `POST /api/funcionarios/{id}/movimentacoes` | `POST` | Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
