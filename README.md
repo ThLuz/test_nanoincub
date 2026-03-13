@@ -53,38 +53,51 @@ localhost:8000
 
 ### 8. Documentação da API - Gerenciamento de Funcionários
 
-Esta API permite o controle de funcionários, autenticação de administradores e gestão de movimentações financeiras (entradas e saídas).
+Esta API fornece um sistema completo para gerenciamento de colaboradores e controle de saldo financeiro (entradas e saídas) com segurança e integridade de dados.
 
-## Autenticação
+## Autenticação (Laravel Sanctum)
 
-A API utiliza o **Laravel Sanctum** para autenticação. Exceto pelo endpoint de login, todos os demais exigem o header:
-`Authorization: Bearer {seu_token}`
+Com exceção do `/login`, todos os endpoints exigem um token Bearer válido.
 
 | Endpoint | Método | Descrição | Payload (JSON) |
 | :--- | :--- | :--- | :--- |
-| `/api/login` | `POST` | Realiza login e retorna o token. | `{"login": "admin", "senha": "123"}` |
-| `/api/logout` | `POST` | Invalida o token de acesso atual. | N/A |
+| `/api/login` | `POST` | Autentica e retorna o token de acesso. | `{"login": "admin", "senha": "..."}` |
+| `/api/logout` | `POST` | Invalida o token atual. | N/A |
+
+> **Header:** `Authorization: Bearer {token}`
 
 ---
 
-## Funcionários
+## 👥 Funcionários
 
-Gerenciamento do cadastro de colaboradores (apenas registros não excluídos).
+Gerenciamento de registros de funcionários ativos no sistema.
 
-| Endpoint | Método | Descrição |
+| Método | Endpoint | Descrição |
 | :--- | :--- | :--- |
-| `/api/funcionarios` | `GET` | Lista todos os funcionários ativos. |
-| `/api/funcionarios/{id}` | `GET` | Detalhes de um funcionário específico. |
-| `/api/funcionarios` | `POST` | Cadastra novo funcionário. |
-| `/api/funcionarios/{id}` | `PUT` | Atualiza nome e login do funcionário. |
-| `/api/funcionarios/{id}` | `DELETE` | Remove logicamente o funcionário (soft delete). |
+| `GET` | `/api/funcionarios` | Lista funcionários (id, nome, login, saldo). |
+| `GET` | `/api/funcionarios/{id}` | Busca detalhes de um funcionário específico. |
+| `POST` | `/api/funcionarios` | Cria um novo funcionário (Saldo inicial: 0). |
+| `PUT` | `/api/funcionarios/{id}` | Atualiza nome e login de um funcionário. |
+| `DELETE` | `/api/funcionarios/{id}` | Remove o funcionário (Soft Delete). |
 
-### Exemplo de cadastro (`POST`):
-```json
+---
+
+## 💸 Movimentações Financeiras
+
+Este módulo controla o saldo dos funcionários. Possui travas de segurança para evitar saldo negativo e concorrência de dados.
+
+### Listar Histórico
+- **Endpoint:** `GET /api/funcionarios/{id}/movimentacoes`
+- **Descrição:** Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes.
+
+### Registrar Movimentação
+- **Endpoint:** `POST /api/funcionarios/{id}/movimentacoes`
+- **Payload:**
+  json
 {
-  "nome": "Fulano de Tal",
-  "login": "fulano.api",
-  "senha": "password123"
+  "tipo": "entrada", 
+  "valor": 100.50,
+  "descricao": "Bônus mensal"
 }
 
 
