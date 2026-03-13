@@ -87,11 +87,12 @@ Gerenciamento de registros de funcionários ativos no sistema.
 Este módulo controla o saldo dos funcionários. Possui travas de segurança para evitar saldo negativo e concorrência de dados.
 
 | Endpoint | Método | Descrição | 
-| :--- | :--- | :--- | :--- |
-| `/api/funcionarios/{id}/movimentacoes` | `GET` |  Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
-| `POST /api/funcionarios/{id}/movimentacoes` | `POST` | Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
+| :--- | :--- | :--- |
+| `/api/funcionarios/{id}/movimentacoes` | `GET` | Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
+| `/api/funcionarios/{id}/movimentacoes` | `POST` | Adiciona uma nova movimentação (entrada ou saída) para o colaborador. |
 
-> **Header:** `Authorization: Bearer {token}`
+**Header:** `Authorization: Bearer {token}`
+
 
 # Code Review
 
