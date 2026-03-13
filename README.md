@@ -86,19 +86,6 @@ Gerenciamento de registros de funcionários ativos no sistema.
 
 Este módulo controla o saldo dos funcionários. Possui travas de segurança para evitar saldo negativo e concorrência de dados.
 
-### Listar Histórico
-- **Endpoint:** `GET /api/funcionarios/{id}/movimentacoes`
-- **Descrição:** Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes.
-
-### Registrar Movimentação
-- **Endpoint:** `POST /api/funcionarios/{id}/movimentacoes`
-- **Payload:**
-  json
-{
-  "tipo": "entrada", 
-  "valor": 100.50,
-  "descricao": "Bônus mensal"
-}
 | Endpoint | Método | Descrição | Payload (JSON) |
 | :--- | :--- | :--- | :--- |
 | `/api/funcionarios/{id}/movimentacoes` | `GET` |  Retorna todas as entradas e saídas do colaborador, ordenadas pelas mais recentes. |
