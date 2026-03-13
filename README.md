@@ -189,6 +189,18 @@ Para garantir a velocidade e o isolamento total dos dados, os testes utilizam um
 
 ---
 
+<<<<<<< HEAD
+=======
+## 2. Como executar os testes via Docker
+
+Como a aplicação está containerizada, utilize os comandos abaixo no seu terminal para disparar as suítes de teste:
+
+**Executar todos os testes:**
+```bash
+docker exec -it painel_app php artisan test
+´´´
+
+>>>>>>> e104172 (ajustes finais estrutura)
 # Uso de Inteligência Artificial
 Para este teste, utilizei IA de forma estratégica para acelerar o desenvolvimento e garantir a qualidade técnica.
 

@@ -12,7 +12,6 @@ class ListarFuncionarios extends Component
 
     public $search = '';
 
-    // Define o tema da paginação para Tailwind (comum em novos projetos Laravel)
     protected $paginationTheme = 'tailwind';
 
     public function updatingSearch() 
