@@ -51,6 +51,42 @@ App\Models\Administrador::create(['nome' => 'Admin Teste', 'login' => 'admin', '
 
 localhost:8000
 
+### 8. Documentação da API - Gerenciamento de Funcionários
+
+Esta API permite o controle de funcionários, autenticação de administradores e gestão de movimentações financeiras (entradas e saídas).
+
+## Autenticação
+
+A API utiliza o **Laravel Sanctum** para autenticação. Exceto pelo endpoint de login, todos os demais exigem o header:
+`Authorization: Bearer {seu_token}`
+
+| Endpoint | Método | Descrição | Payload (JSON) |
+| :--- | :--- | :--- | :--- |
+| `/api/login` | `POST` | Realiza login e retorna o token. | `{"login": "admin", "senha": "123"}` |
+| `/api/logout` | `POST` | Invalida o token de acesso atual. | N/A |
+
+---
+
+## Funcionários
+
+Gerenciamento do cadastro de colaboradores (apenas registros não excluídos).
+
+| Endpoint | Método | Descrição |
+| :--- | :--- | :--- |
+| `/api/funcionarios` | `GET` | Lista todos os funcionários ativos. |
+| `/api/funcionarios/{id}` | `GET` | Detalhes de um funcionário específico. |
+| `/api/funcionarios` | `POST` | Cadastra novo funcionário. |
+| `/api/funcionarios/{id}` | `PUT` | Atualiza nome e login do funcionário. |
+| `/api/funcionarios/{id}` | `DELETE` | Remove logicamente o funcionário (soft delete). |
+
+### Exemplo de cadastro (`POST`):
+```json
+{
+  "nome": "Fulano de Tal",
+  "login": "fulano.api",
+  "senha": "password123"
+}
+
 
 # Code Review
 
