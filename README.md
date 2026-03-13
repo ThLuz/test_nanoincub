@@ -151,14 +151,15 @@ Esqueleto da documentação técnica (README).
 
 O que foi revisado: Grande parte da lógica de segurança (Sanctum).
 
+Ajustei manualmente a lógica de lockForUpdate() para garantir a prevenção de condições de corrida, refinei as mensagens de erro para o padrão da API e corrigi as queries de relatório para assegurar a precisão dos cálculos de saldo.
+
 ## Como executar os testes via Docker
 
 Como a aplicação está containerizada, utilize os comandos abaixo no seu terminal para disparar as suítes de teste:
+
 
 **Executar todos os testes:**
 ```bash
 docker exec -it painel_app php artisan test
 ```
 
-
-O que mudou: Ajustei manualmente a lógica de lockForUpdate() para garantir a prevenção de condições de corrida, refinei as mensagens de erro para o padrão da API e corrigi as queries de relatório para assegurar a precisão dos cálculos de saldo.
