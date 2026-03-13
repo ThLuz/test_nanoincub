@@ -59,7 +59,7 @@ Esta API fornece um sistema completo para gerenciamento de colaboradores e contr
 
 Com exceção do `/login`, todos os endpoints exigem um token Bearer válido.
 
-| Endpoint | Método | Descrição | Payload (JSON) |
+| Endpoint | Método | Descrição |
 | :--- | :--- | :--- | :--- |
 | `/api/login` | `POST` | Autentica e retorna o token de acesso. | `{"login": "admin", "senha": "..."}` |
 | `/api/logout` | `POST` | Invalida o token atual. | N/A |
